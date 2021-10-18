@@ -48,6 +48,7 @@ technical_indicators_branch = Model(inputs=dense_input, outputs=y)
 # combine the output of the two branches
 combined = concatenate([lstm_branch.output, technical_indicators_branch.output], name='concatenate')
 
+#activation kan kiezen tussen (linear, tanh, sigmoid)
 z = Dense(64, activation="sigmoid", name='dense_pooling')(combined)
 z = Dense(1, activation="linear", name='dense_out')(z)
 
