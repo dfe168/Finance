@@ -2,6 +2,9 @@ from alpha_vantage.timeseries import TimeSeries
 from pprint import pprint
 import argparse
 
+#http://www.eoddata.com/
+
+
 def save_dataset(symbol, time_window):
     ts = TimeSeries(key='4HETZQG1BP46TPS4', output_format='pandas')
     if time_window == 'intraday':
@@ -16,7 +19,6 @@ def save_dataset(symbol, time_window):
     #data.to_csv(f'./{data}_{time_window}.csv')
     data.to_csv('savedData.csv')
     print('Data is saved to csv')
-
 
 # if __name__ == "__main__":
 #     parser = argparse.ArgumentParser()

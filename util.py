@@ -51,10 +51,14 @@ def csv_to_dataset(csv_path):
     tech_ind_scaler = preprocessing.MinMaxScaler()
     technical_indicators_normalised = tech_ind_scaler.fit_transform(technical_indicators)
 
+    print(y_normaliser)
+
     assert ohlcv_histories_normalised.shape[0] == next_day_open_values_normalised.shape[0] == technical_indicators_normalised.shape[0]
     return ohlcv_histories_normalised, technical_indicators_normalised, next_day_open_values_normalised, next_day_open_values, y_normaliser
 
 # csv_to_dataset('AAPL_daily.csv')
+
+
 
 def multiple_csv_to_dataset(test_set_name):
     import os
